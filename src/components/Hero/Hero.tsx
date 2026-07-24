@@ -3,7 +3,10 @@ import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex flex-col md:flex-row items-center justify-between px-10 md:px-20">
+    <section
+  id="home"
+  className="min-h-screen pt-24 flex flex-col md:flex-row items-center justify-between px-10 md:px-20"
+>
       {/* Left Side */}
       <motion.div
         initial={{ opacity: 0, x: -50 }}
