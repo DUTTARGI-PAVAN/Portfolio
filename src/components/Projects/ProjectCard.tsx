@@ -26,6 +26,8 @@ const ProjectCard = ({
       transition
     "
     >
+      
+      
       <h3 className="text-2xl font-bold text-sky-400">
         {title}
       </h3>
