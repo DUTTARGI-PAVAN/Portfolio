@@ -42,7 +42,13 @@ const Hero = () => {
 
         <div className="mt-8 flex gap-4">
           <button className="bg-sky-500 px-6 py-3 rounded-lg hover:bg-sky-600 transition">
-            Download Resume
+            <a
+  href="/resume.pdf"
+  download
+  className="bg-sky-500 px-6 py-3 rounded-lg"
+>
+  Download Resume
+</a>
           </button>
 
           <button className="border border-sky-500 px-6 py-3 rounded-lg hover:bg-sky-500 transition">
