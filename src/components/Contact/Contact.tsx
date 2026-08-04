@@ -5,63 +5,52 @@ import {
 } from "react-icons/fa";
 
 import { SiLeetcode } from "react-icons/si";
+import { Send } from "lucide-react";
 
 const Contact = () => {
+  const links = [
+    { icon: FaEnvelope, label: "your-email@gmail.com", href: "mailto:your-email@gmail.com" },
+    { icon: FaLinkedin, label: "LinkedIn Profile", href: "#" },
+    { icon: FaGithub, label: "GitHub Profile", href: "#" },
+    { icon: SiLeetcode, label: "LeetCode Profile", href: "#" },
+  ];
+
   return (
-    <section
-      id="contact"
-      className="min-h-screen px-10 md:px-20 py-20"
-    >
-      <h2 className="text-5xl font-bold mb-16">
-        Contact <span className="text-sky-400">Me</span>
+    <section id="contact" className="section-shell">
+      <p className="section-kicker">Contact</p>
+      <h2 className="section-title">
+        Let’s build something useful together.
       </h2>
 
-      <div className="grid md:grid-cols-2 gap-12">
-        {/* Left Side */}
+      <div className="mt-12 grid gap-8 md:grid-cols-[0.9fr_1.1fr]">
         <div>
-          <h3 className="text-3xl font-semibold mb-6">
+          <h3 className="mb-5 text-2xl font-black text-white">
             Let's Connect
           </h3>
 
-          <p className="text-gray-400 leading-8 mb-8">
+          <p className="section-copy mb-8">
             I'm currently looking for internship and
             full-time opportunities in Full Stack
             Development, AI Engineering, and Product
             Development.
           </p>
 
-          <div className="space-y-5">
-            <div className="flex items-center gap-4">
-              <FaEnvelope className="text-sky-400" />
-              <span>your-email@gmail.com</span>
-            </div>
-
-            <div className="flex items-center gap-4">
-              <FaLinkedin className="text-sky-400" />
-              <a href="#">
-                LinkedIn Profile
+          <div className="space-y-3">
+            {links.map(({ icon: Icon, label, href }) => (
+              <a
+                key={label}
+                href={href}
+                className="glass-panel flex items-center gap-4 rounded-xl p-4 font-semibold text-slate-200 transition hover:border-cyan-300/45 hover:text-cyan-100"
+              >
+                <Icon className="text-cyan-300" />
+                <span>{label}</span>
               </a>
-            </div>
-
-            <div className="flex items-center gap-4">
-              <FaGithub className="text-sky-400" />
-              <a href="#">
-                GitHub Profile
-              </a>
-            </div>
-
-            <div className="flex items-center gap-4">
-              <SiLeetcode className="text-sky-400" />
-              <a href="#">
-                LeetCode Profile
-              </a>
-            </div>
+            ))}
           </div>
         </div>
 
-        {/* Right Side */}
-        <div className="bg-slate-900 p-8 rounded-2xl border border-slate-800">
-          <h3 className="text-2xl font-semibold mb-6">
+        <div className="glass-panel rounded-2xl p-6 md:p-8">
+          <h3 className="mb-6 text-2xl font-black text-white">
             Send a Message
           </h3>
 
@@ -69,25 +58,26 @@ const Contact = () => {
             <input
               type="text"
               placeholder="Your Name"
-              className="w-full bg-slate-800 p-4 rounded-lg outline-none"
+              className="w-full rounded-xl border border-slate-700/70 bg-slate-950/70 p-4 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-300/70"
             />
 
             <input
               type="email"
               placeholder="Your Email"
-              className="w-full bg-slate-800 p-4 rounded-lg outline-none"
+              className="w-full rounded-xl border border-slate-700/70 bg-slate-950/70 p-4 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-300/70"
             />
 
             <textarea
               rows={5}
               placeholder="Your Message"
-              className="w-full bg-slate-800 p-4 rounded-lg outline-none"
+              className="w-full resize-none rounded-xl border border-slate-700/70 bg-slate-950/70 p-4 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-300/70"
             />
 
             <button
               type="submit"
-              className="bg-sky-500 px-6 py-3 rounded-lg hover:bg-sky-600 transition"
+              className="primary-action w-full sm:w-auto"
             >
+              <Send size={18} />
               Send Message
             </button>
           </form>

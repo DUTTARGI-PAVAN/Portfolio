@@ -23,11 +23,12 @@ useEffect(() => {
   return () => clearTimeout(timer);
 }, []);
 
-if (loading) {
-  return <Loader />;
-}
+  if (loading) {
+    return <Loader />;
+  }
+
   return (
-    <div className="bg-slate-950 text-white">
+    <div className="min-h-screen overflow-hidden text-slate-100">
       <ScrollProgress />
       <ScrollToTop />
       <Navbar />
@@ -39,7 +40,6 @@ if (loading) {
       <Timeline />
       <Contact />
       <Footer />
-      
     </div>
   );
 }

@@ -4,15 +4,13 @@ import { projects } from "../../data/projects";
 
 const Projects = () => {
   return (
-    <section
-      id="projects"
-      className="min-h-screen px-10 md:px-20 py-20"
-    >
-      <h2 className="text-5xl font-bold mb-16">
-        Featured <span className="text-sky-400">Projects</span>
+    <section id="projects" className="section-shell">
+      <p className="section-kicker">Projects</p>
+      <h2 className="section-title">
+        Selected builds with full stack and AI depth.
       </h2>
 
-      <div className="grid md:grid-cols-3 gap-8">
+      <div className="mt-12 grid gap-6 md:grid-cols-3">
         {projects.map((project) => (
           <motion.div
             key={project.title}
@@ -20,6 +18,7 @@ const Projects = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
+            className="h-full"
           >
             <ProjectCard {...project} />
           </motion.div>

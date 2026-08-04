@@ -8,20 +8,18 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full backdrop-blur-md bg-slate-950/80 border-b border-slate-800 z-50">
-      <div className="max-w-7xl mx-auto px-8 py-5 flex items-center justify-between">
-        {/* Logo */}
-        <h1 className="text-2xl font-bold">
-          Pavan<span className="text-sky-400">.</span>
-        </h1>
+    <nav className="fixed left-0 top-0 z-50 w-full border-b border-white/10 bg-slate-950/72 backdrop-blur-xl">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
+        <a href="#home" className="text-xl font-black tracking-wide text-white">
+          Pavan<span className="text-cyan-300">.</span>
+        </a>
 
-        {/* Navigation Links */}
-        <ul className="hidden md:flex gap-8 text-gray-300">
+        <ul className="hidden items-center gap-7 text-sm font-semibold text-slate-300 md:flex">
           {navItems.map((item) => (
             <li key={item}>
               <a
                 href={`#${item.toLowerCase()}`}
-                className="hover:text-sky-400 transition"
+                className="transition hover:text-cyan-300"
               >
                 {item}
               </a>
@@ -29,11 +27,11 @@ const Navbar = () => {
           ))}
         </ul>
 
-        {/* Resume Button */}
         <a
           href="/resume.pdf"
           target="_blank"
-          className="bg-sky-500 px-5 py-2 rounded-lg hover:bg-sky-600 transition"
+          rel="noreferrer"
+          className="rounded-full border border-cyan-300/30 bg-cyan-300/10 px-4 py-2 text-sm font-bold text-cyan-100 transition hover:border-cyan-200 hover:bg-cyan-300/18"
         >
           Resume
         </a>

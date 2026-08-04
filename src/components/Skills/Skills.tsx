@@ -3,15 +3,13 @@ import { skills } from "../../data/skills";
 
 const Skills = () => {
   return (
-    <section
-      id="skills"
-      className="min-h-screen px-10 md:px-20 py-20"
-    >
-      <h2 className="text-5xl font-bold mb-16">
-        My <span className="text-sky-400">Skills</span>
+    <section id="skills" className="section-shell">
+      <p className="section-kicker">Skills</p>
+      <h2 className="section-title">
+        Tools I use to ship clean, useful products.
       </h2>
 
-      <div className="space-y-10">
+      <div className="mt-12 grid gap-5 md:grid-cols-2">
         {Object.entries(skills).map(([category, items]) => (
           <motion.div
             key={category}
@@ -19,26 +17,17 @@ const Skills = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
+            className="glass-panel rounded-2xl p-6"
           >
-            <h3 className="text-2xl font-semibold capitalize mb-5">
+            <h3 className="mb-5 text-xl font-black capitalize text-white">
               {category}
             </h3>
 
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-3">
               {items.map((skill) => (
                 <div
                   key={skill}
-                  className="
-                    bg-slate-900
-                    px-5
-                    py-3
-                    rounded-xl
-                    border
-                    border-slate-800
-                    hover:border-sky-500
-                    hover:-translate-y-1
-                    transition
-                  "
+                  className="rounded-full border border-slate-700/70 bg-slate-900/70 px-4 py-2 text-sm font-bold text-slate-200 transition hover:border-cyan-300/60 hover:text-cyan-100"
                 >
                   {skill}
                 </div>
