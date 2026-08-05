@@ -3,7 +3,6 @@ const Navbar = () => {
     "About",
     "Skills",
     "Projects",
-    "Timeline",
     "Contact",
   ];
 
